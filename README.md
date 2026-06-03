@@ -25,7 +25,7 @@ const val PRIVACY_POLICY_URL =
 
 Use as mesmas URLs na **Play Console** e no **App Store Connect** como link público da política de privacidade.
 
-A fonte do texto legal é [`bahrista-kmp/docs/privacy-policy.md`](../bahrista-kmp/docs/privacy-policy.md) (sincronizada no build).
+A fonte canônica do texto legal é [`bahrista-kmp/docs/privacy-policy.md`](../bahrista-kmp/docs/privacy-policy.md). Uma cópia versionada fica em `src/data/privacy-policy.md` (o CI não acessa o repo KMP — ele pode ser privado).
 
 ## Desenvolvimento local
 
@@ -55,7 +55,17 @@ npm run preview
 1. Crie o repositório `giovaninb/bahrista-web` e envie este diretório.
 2. Em **Settings → Pages**, escolha **Source: GitHub Actions**.
 3. O workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) roda em cada push na branch `main`.
-4. No CI, a política é copiada do repositório `bahrista-kmp` (não depende do monorepo local).
+
+### Atualizar a política de privacidade
+
+Depois de editar `bahrista-kmp/docs/privacy-policy.md`:
+
+```bash
+npm run sync:privacy
+git add src/data/privacy-policy.md
+git commit -m "chore: sync privacy policy from KMP"
+git push
+```
 
 ## Estrutura
 

@@ -21,19 +21,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Checkout privacy policy from KMP
-        uses: actions/checkout@v4
-        with:
-          repository: giovaninb/bahrista-kmp
-          path: bahrista-kmp
-          sparse-checkout: |
-            docs/privacy-policy.md
-
-      - name: Sync privacy policy
-        run: |
-          mkdir -p src/data
-          cp bahrista-kmp/docs/privacy-policy.md src/data/privacy-policy.md
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
