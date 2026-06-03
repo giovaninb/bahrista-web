@@ -5,8 +5,10 @@
   "private": true,
   "scripts": {
     "sync:privacy": "node scripts/sync-privacy.mjs",
-    "predev": "npm run sync:privacy",
-    "prebuild": "npm run sync:privacy",
+    "sync:assets": "node scripts/sync-assets.mjs",
+    "sync": "npm run sync:assets && npm run sync:privacy",
+    "predev": "npm run sync",
+    "prebuild": "npm run sync",
     "dev": "astro dev",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "astro preview"

@@ -56,6 +56,17 @@ npm run preview
 2. Em **Settings → Pages**, escolha **Source: GitHub Actions**.
 3. O workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) roda em cada push na branch `main`.
 
+### Atualizar ícones do app
+
+Copia ícones de `bahrista-kmp/composeApp/src/androidMain/res` e `playstore-icon.png`:
+
+```bash
+npm run sync:assets
+git add public/images/
+git commit -m "chore: sync app icons from KMP"
+git push
+```
+
 ### Atualizar a política de privacidade
 
 Depois de editar `bahrista-kmp/docs/privacy-policy.md`:

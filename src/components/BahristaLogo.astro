@@ -1,0 +1,28 @@
+---
+interface Props {
+  size?: number;
+  class?: string;
+  variant?: "round" | "playstore";
+}
+
+const {
+  size = 48,
+  class: className = "",
+  variant = "round",
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const src =
+  variant === "playstore"
+    ? `${base}images/bahrista-icon.png`
+    : `${base}images/bahrista-icon-round.png`;
+---
+
+<img
+  src={src}
+  alt="Bahrista"
+  class:list={["bahrista-logo", className]}
+  width={size}
+  height={size}
+  decoding="async"
+/>

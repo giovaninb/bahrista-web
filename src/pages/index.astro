@@ -1,20 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import StoreButtons from "../components/StoreButtons.astro";
+import BahristaLogo from "../components/BahristaLogo.astro";
 import { SITE, FEATURES } from "../lib/config";
-
-const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Bahrista" description={SITE.tagline}>
   <section class="hero">
-    <img
-      src={`${base}favicon.svg`}
-      alt=""
-      class="hero__logo"
-      width="96"
-      height="96"
-    />
+    <BahristaLogo size={96} class="hero__logo" variant="playstore" />
     <h1>{SITE.name}</h1>
     <p class="hero__tagline">{SITE.tagline}</p>
     <p class="hero__intro">

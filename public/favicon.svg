@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Bahrista">
-  <circle cx="32" cy="32" r="30" fill="#FEF9EF" stroke="#C4BFB5" stroke-width="2"/>
-  <ellipse cx="32" cy="36" rx="14" ry="10" fill="#33210D"/>
-  <path fill="#4B3621" d="M22 28c0-6 4-10 10-10s10 4 10 10v2H22v-2z"/>
-  <ellipse cx="32" cy="26" rx="12" ry="4" fill="#7D5700" opacity="0.35"/>
-</svg>
