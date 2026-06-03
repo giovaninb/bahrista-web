@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
     "sync:privacy": "node scripts/sync-privacy.mjs",
+    "sync:terms": "node scripts/sync-terms.mjs",
     "sync:assets": "node scripts/sync-assets.mjs",
-    "sync": "npm run sync:assets && npm run sync:privacy",
+    "sync": "npm run sync:assets && npm run sync:privacy && npm run sync:terms",
     "predev": "npm run sync",
     "prebuild": "npm run sync",
     "dev": "astro dev",

@@ -11,19 +11,19 @@ import {
 
 const base = import.meta.env.BASE_URL;
 const lang = normalizeLang(Astro.url.searchParams.get("lang"));
-const markdown = loadLegalMarkdown("privacy-policy.md");
+const markdown = loadLegalMarkdown("terms-of-use.md");
 const sections = parseLegalSections(markdown);
 const html = renderLegalHtml(sections[lang]);
 
 const pageTitles: Record<LegalLang, string> = {
-  pt: "Política de Privacidade",
-  en: "Privacy Policy",
-  es: "Política de Privacidad",
+  pt: "Termos de Uso",
+  en: "Terms of Use",
+  es: "Términos de Uso",
 };
 
 function langHref(code: LegalLang): string {
-  if (code === "pt") return `${base}privacy/`;
-  return `${base}privacy/?lang=${code}`;
+  if (code === "pt") return `${base}terms/`;
+  return `${base}terms/?lang=${code}`;
 }
 ---
 
@@ -32,7 +32,7 @@ function langHref(code: LegalLang): string {
     <a href={base} class="privacy-back">← Voltar ao início</a>
     <h1 class="privacy-page__title">{pageTitles[lang]}</h1>
 
-    <nav aria-label="Idioma da política">
+    <nav aria-label="Idioma dos termos">
       <ul class="privacy-lang">
         {
           Object.values(LEGAL_LANG_LABELS).map(({ code, label }) => (

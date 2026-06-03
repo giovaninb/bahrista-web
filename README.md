@@ -10,6 +10,9 @@ Site portfolio estático do **Bahrista** para [GitHub Pages](https://giovaninb.g
 | Política de Privacidade (PT) | https://giovaninb.github.io/bahrista-web/privacy/ |
 | Privacy Policy (EN) | https://giovaninb.github.io/bahrista-web/privacy/?lang=en |
 | Política de Privacidad (ES) | https://giovaninb.github.io/bahrista-web/privacy/?lang=es |
+| Termos de Uso (PT) | https://giovaninb.github.io/bahrista-web/terms/ |
+| Terms of Use (EN) | https://giovaninb.github.io/bahrista-web/terms/?lang=en |
+| Términos de Uso (ES) | https://giovaninb.github.io/bahrista-web/terms/?lang=es |
 
 **Google Play:** [com.bahrista.app](https://play.google.com/store/apps/details?id=com.bahrista.app)  
 **App Store:** em breve.
@@ -25,7 +28,7 @@ const val PRIVACY_POLICY_URL =
 
 Use as mesmas URLs na **Play Console** e no **App Store Connect** como link público da política de privacidade.
 
-A fonte canônica do texto legal é [`bahrista-kmp/docs/privacy-policy.md`](../bahrista-kmp/docs/privacy-policy.md). Uma cópia versionada fica em `src/data/privacy-policy.md` (o CI não acessa o repo KMP — ele pode ser privado).
+A fonte canônica dos textos legais é [`bahrista-kmp/docs/`](../bahrista-kmp/docs/) (`privacy-policy.md`, `terms-of-use.md`). Cópias versionadas ficam em `src/data/` (o CI não acessa o repo KMP — ele pode ser privado).
 
 ## Desenvolvimento local
 
@@ -78,13 +81,22 @@ git commit -m "chore: sync privacy policy from KMP"
 git push
 ```
 
+### Atualizar termos de uso
+
+Depois de editar `bahrista-kmp/docs/terms-of-use.md`:
+
+```bash
+npm run sync:terms
+git add src/data/terms-of-use.md
+git commit -m "chore: sync terms of use from KMP"
+git push
+```
+
 ## Estrutura
 
 - `src/pages/index.astro` — landing portfolio
 - `src/pages/privacy.astro` — política (PT / EN / ES via `?lang=`)
-- `scripts/sync-privacy.mjs` — cópia local do markdown do KMP
+- `src/pages/terms.astro` — termos de uso (PT / EN / ES via `?lang=`)
+- `scripts/sync-privacy.mjs` — cópia local do markdown da política
+- `scripts/sync-terms.mjs` — cópia local do markdown dos termos
 - `src/styles/bahrista.css` — tokens do design system do app
-
-## Termos de uso
-
-Não há página `/terms` nesta versão. O app referencia `bahrista.app/terms`; publique quando existir o documento.

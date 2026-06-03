@@ -13,6 +13,9 @@ export const PUBLIC_URLS = {
   privacy: "https://giovaninb.github.io/bahrista-web/privacy/",
   privacyEn: "https://giovaninb.github.io/bahrista-web/privacy/?lang=en",
   privacyEs: "https://giovaninb.github.io/bahrista-web/privacy/?lang=es",
+  terms: "https://giovaninb.github.io/bahrista-web/terms/",
+  termsEn: "https://giovaninb.github.io/bahrista-web/terms/?lang=en",
+  termsEs: "https://giovaninb.github.io/bahrista-web/terms/?lang=es",
 } as const;
 
 export const FEATURES = [
