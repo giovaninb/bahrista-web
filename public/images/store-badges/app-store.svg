@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="162" height="48" viewBox="0 0 162 48" role="img" aria-label="Baixar na App Store">
+  <rect width="162" height="48" rx="6" fill="#1D1C16"/>
+  <path fill="#FEF9EF" d="M24 32c0-8 4-14 8-18 2-2 4-3 4-5 0-2-2-3-4-3-3 0-5 2-6 4-1-2-4-4-7-4-5 0-9 5-9 13 0 8 4 13 9 13 3 0 6-2 7-4 1 3 4 5 8 5 4 0 8-4 8-11z"/>
+  <text x="52" y="20" fill="#FEF9EF" font-family="system-ui,sans-serif" font-size="9" font-weight="500">Baixar na</text>
+  <text x="52" y="34" fill="#FEF9EF" font-family="system-ui,sans-serif" font-size="14" font-weight="600">App Store</text>
+</svg>

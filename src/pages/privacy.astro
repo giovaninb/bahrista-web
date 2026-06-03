@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {
+  loadPrivacyMarkdown,
+  parsePrivacySections,
+  renderPrivacyHtml,
+  normalizeLang,
+  PRIVACY_LANG_LABELS,
+  type PrivacyLang,
+} from "../lib/privacy";
+
+const base = import.meta.env.BASE_URL;
+const lang = normalizeLang(Astro.url.searchParams.get("lang"));
+const markdown = loadPrivacyMarkdown();
+const sections = parsePrivacySections(markdown);
+const html = renderPrivacyHtml(sections[lang]);
+
+const pageTitles: Record<PrivacyLang, string> = {
+  pt: "Política de Privacidade",
+  en: "Privacy Policy",
+  es: "Política de Privacidad",
+};
+
+function langHref(code: PrivacyLang): string {
+  if (code === "pt") return `${base}privacy/`;
+  return `${base}privacy/?lang=${code}`;
+}
+---
+
+<Layout title={pageTitles[lang]} description={pageTitles[lang]}>
+  <article class="privacy-page">
+    <a href={base} class="privacy-back">← Voltar ao início</a>
+    <h1 class="privacy-page__title">{pageTitles[lang]}</h1>
+
+    <nav aria-label="Idioma da política">
+      <ul class="privacy-lang">
+        {
+          Object.values(PRIVACY_LANG_LABELS).map(({ code, label }) => (
+            <li>
+              <a
+                href={langHref(code)}
+                class:list={[{ "is-active": code === lang }]}
+                hreflang={code === "pt" ? "pt-BR" : code}
+              >
+                {label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="privacy-content" set:html={html} />
+  </article>
+</Layout>

@@ -1,0 +1,30 @@
+---
+import { PLAY_STORE_URL } from "../lib/config";
+const base = import.meta.env.BASE_URL;
+---
+
+<div class="store-buttons">
+  <a
+    class="store-buttons__link"
+    href={PLAY_STORE_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Baixar Bahrista na Google Play"
+  >
+    <img
+      src={`${base}images/store-badges/google-play.svg`}
+      alt="Disponível no Google Play"
+      width="162"
+      height="48"
+    />
+  </a>
+  <div class="store-buttons__soon" aria-disabled="true">
+    <img
+      src={`${base}images/store-badges/app-store.svg`}
+      alt="App Store"
+      width="162"
+      height="48"
+    />
+    <span class="store-buttons__soon-label">Em breve</span>
+  </div>
+</div>
