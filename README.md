@@ -13,6 +13,9 @@ Site portfolio estático do **Bahrista** para [GitHub Pages](https://giovaninb.g
 | Termos de Uso (PT) | https://giovaninb.github.io/bahrista-web/terms/ |
 | Terms of Use (EN) | https://giovaninb.github.io/bahrista-web/terms/?lang=en |
 | Términos de Uso (ES) | https://giovaninb.github.io/bahrista-web/terms/?lang=es |
+| Exclusão de conta (PT) | https://giovaninb.github.io/bahrista-web/delete-account/ |
+| Delete account (EN) | https://giovaninb.github.io/bahrista-web/delete-account/?lang=en |
+| Eliminar cuenta (ES) | https://giovaninb.github.io/bahrista-web/delete-account/?lang=es |
 
 **Google Play:** [com.bahrista.app](https://play.google.com/store/apps/details?id=com.bahrista.app)  
 **App Store:** em breve.

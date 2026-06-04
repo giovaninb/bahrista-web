@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {
+  loadLegalMarkdown,
+  parseLegalSections,
+  renderLegalHtml,
+  normalizeLang,
+  LEGAL_LANG_LABELS,
+  type LegalLang,
+} from "../lib/legal";
+
+const base = import.meta.env.BASE_URL;
+const lang = normalizeLang(Astro.url.searchParams.get("lang"));
+const markdown = loadLegalMarkdown("delete-account.md");
+const sections = parseLegalSections(markdown);
+const html = renderLegalHtml(sections[lang]);
+
+const pageTitles: Record<LegalLang, string> = {
+  pt: "Exclusão de conta",
+  en: "Delete account",
+  es: "Eliminar cuenta",
+};
+
+const pageDescriptions: Record<LegalLang, string> = {
+  pt: "Como excluir sua conta e dados no app Bahrista.",
+  en: "How to delete your Bahrista account and data in the app.",
+  es: "Cómo eliminar tu cuenta y datos en la app Bahrista.",
+};
+
+function langHref(code: LegalLang): string {
+  if (code === "pt") return `${base}delete-account/`;
+  return `${base}delete-account/?lang=${code}`;
+}
+---
+
+<Layout title={pageTitles[lang]} description={pageDescriptions[lang]}>
+  <article class="privacy-page">
+    <a href={base} class="privacy-back">← Voltar ao início</a>
+    <h1 class="privacy-page__title">{pageTitles[lang]}</h1>
+
+    <nav aria-label="Idioma da página">
+      <ul class="privacy-lang">
+        {
+          Object.values(LEGAL_LANG_LABELS).map(({ code, label }) => (
+            <li>
+              <a
+                href={langHref(code)}
+                class:list={[{ "is-active": code === lang }]}
+                hreflang={code === "pt" ? "pt-BR" : code}
+              >
+                {label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="privacy-content" set:html={html} />
+  </article>
+</Layout>

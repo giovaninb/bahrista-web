@@ -16,6 +16,11 @@ export const PUBLIC_URLS = {
   terms: "https://giovaninb.github.io/bahrista-web/terms/",
   termsEn: "https://giovaninb.github.io/bahrista-web/terms/?lang=en",
   termsEs: "https://giovaninb.github.io/bahrista-web/terms/?lang=es",
+  deleteAccount: "https://giovaninb.github.io/bahrista-web/delete-account/",
+  deleteAccountEn:
+    "https://giovaninb.github.io/bahrista-web/delete-account/?lang=en",
+  deleteAccountEs:
+    "https://giovaninb.github.io/bahrista-web/delete-account/?lang=es",
 } as const;
 
 export const FEATURES = [
