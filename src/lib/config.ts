@@ -7,9 +7,13 @@ export const SITE = {
 export const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.bahrista.app";
 
+export const TESTFLIGHT_URL = "https://testflight.apple.com/join/cJ7Sgunk";
+
 /** URLs públicas no GitHub Pages (project site). */
 export const PUBLIC_URLS = {
   home: "https://giovaninb.github.io/bahrista-web/",
+  playStore: PLAY_STORE_URL,
+  testFlight: TESTFLIGHT_URL,
   privacy: "https://giovaninb.github.io/bahrista-web/privacy/",
   privacyEn: "https://giovaninb.github.io/bahrista-web/privacy/?lang=en",
   privacyEs: "https://giovaninb.github.io/bahrista-web/privacy/?lang=es",

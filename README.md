@@ -18,7 +18,7 @@ Site portfolio estático do **Bahrista** para [GitHub Pages](https://giovaninb.g
 | Eliminar cuenta (ES) | https://giovaninb.github.io/bahrista-web/delete-account/?lang=es |
 
 **Google Play:** [com.bahrista.app](https://play.google.com/store/apps/details?id=com.bahrista.app)  
-**App Store:** em breve.
+**iOS (TestFlight):** [Bahrista beta](https://testflight.apple.com/join/cJ7Sgunk)
 
 ## Alinhar com o app (KMP)
 

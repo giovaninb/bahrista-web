@@ -171,6 +171,12 @@ main {
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
+.store-buttons__link--stacked {
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
 .store-buttons__link:hover {
   transform: translateY(-2px);
 }
@@ -189,24 +195,10 @@ main {
   height: 48px;
 }
 
-.store-buttons__soon {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  opacity: 0.5;
-  cursor: not-allowed;
-  user-select: none;
-}
-
-.store-buttons__soon .store-buttons__badge--apple {
-  filter: grayscale(1);
-}
-
-.store-buttons__soon-label {
+.store-buttons__beta-label {
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--color-on-surface-variant);
+  color: var(--color-secondary);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }

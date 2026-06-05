@@ -1,5 +1,5 @@
 ---
-import { PLAY_STORE_URL } from "../lib/config";
+import { PLAY_STORE_URL, TESTFLIGHT_URL } from "../lib/config";
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -19,7 +19,13 @@ const base = import.meta.env.BASE_URL;
       class="store-buttons__badge store-buttons__badge--play"
     />
   </a>
-  <div class="store-buttons__soon" aria-disabled="true">
+  <a
+    class="store-buttons__link store-buttons__link--stacked"
+    href={TESTFLIGHT_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Testar Bahrista no TestFlight (iOS)"
+  >
     <img
       src={`${base}images/store-badges/app-store.svg`}
       alt="Baixar na App Store"
@@ -27,6 +33,6 @@ const base = import.meta.env.BASE_URL;
       height="83"
       class="store-buttons__badge store-buttons__badge--apple"
     />
-    <span class="store-buttons__soon-label">Em breve</span>
-  </div>
+    <span class="store-buttons__beta-label">Beta no TestFlight</span>
+  </a>
 </div>
